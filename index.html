@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broomleigh Learning</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffaf5;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #ff6b00, #ffae00);
+      color: white;
+      padding: 10px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffe8c2;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1588075592446-259ead5b6a4b?fit=crop&w=1400&q=80') no-repeat center/cover;
+      color: white;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .container {
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .card h2 {
+      color: #ff6b00;
+      margin-top: 0;
+    }
+    footer {
+      background: #ff6b00;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Broomleigh Learning</div>
+    <nav>
+      <a href="#students">Students</a>
+      <a href="#families">Families</a>
+      <a href="#careers">Careers</a>
+      <a href="#staff">Staff</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Welcome To Broomleigh</h1>
+    <p>Home Of The Tigers — Strive, Roar, Succeed</p>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+      <div class="card" id="students">
+        <h2>For Students</h2>
+        <p>Access your textbooks, assignments, and helpful study resources.</p>
+      </div>
+      <div class="card" id="families">
+        <h2>For Families</h2>
+        <p>Stay connected with updates, events, and family resources.</p>
+      </div>
+      <div class="card" id="careers">
+        <h2>Careers</h2>
+        <p>Join the Broomleigh District team and make a difference in education.</p>
+      </div>
+      <div class="card" id="staff">
+        <h2>For Staff</h2>
+        <p>Resources and tools to support our teachers and staff members.</p>
+      </div>
+    </div>
+
+    <div class="card" id="contact" style="margin-top:40px;">
+      <h2>Contact Us</h2>
+      <p>Email: support@broomleigh.edu</p>
+      <p>Phone: (949) 787-7678</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Broomleigh School District — Go Tigers!</p>
+  </footer>
+</body>
+</html>
