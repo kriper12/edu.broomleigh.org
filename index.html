@@ -10,25 +10,32 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #fffaf5;
       color: #333;
+      line-height: 1.6;
     }
     header {
       background: linear-gradient(90deg, #ff6b00, #ffae00);
       color: white;
-      padding: 10px 40px;
+      padding: 12px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     header .logo {
-      font-size: 1.8em;
+      display: flex;
+      align-items: center;
+      font-size: 1.6em;
       font-weight: bold;
       letter-spacing: 1px;
+      gap: 10px;
     }
-
     header .logo img {
-height: 50px;
-      }
+      height: 55px;
+      border-radius: 8px;
+    }
     nav {
       display: flex;
       gap: 25px;
@@ -37,73 +44,115 @@ height: 50px;
       text-decoration: none;
       color: white;
       font-weight: bold;
+      position: relative;
       transition: color 0.3s;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: white;
+      transition: width 0.3s;
+      margin: auto;
     }
     nav a:hover {
       color: #ffe8c2;
     }
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .hero {
       background: url('https://cdn.shopify.com/s/files/1/1138/3648/files/ben-white-83tkHLPgg2Q-unsplash_crop_480x480.jpg?v=1626917779') no-repeat center/cover;
       color: white;
-      height: 400px;
+      height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      text-align: center;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
     }
     .hero h1 {
-      font-size: 3em;
+      font-size: 3.2em;
       margin: 0;
+      animation: fadeInDown 1s ease;
     }
     .hero p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.3em;
+      margin-top: 12px;
+      animation: fadeInUp 1.2s ease;
     }
+
     .container {
-      padding: 40px;
-      max-width: 1100px;
+      padding: 50px 20px;
+      max-width: 1150px;
       margin: auto;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
     .card {
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      cursor: pointer;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transform: translateY(-8px);
+      background: linear-gradient(135deg, #fff4eb, #fffaf5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     .card h2 {
       color: #ff6b00;
       margin-top: 0;
     }
+    #contact {
+      text-align: center;
+      background: #fff7f0;
+    }
     footer {
-      background: #ff6b00;
+      background: linear-gradient(90deg, #ff6b00, #ffae00);
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 18px;
+      margin-top: 50px;
+      font-size: 0.95em;
       box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
     }
-    footer p {
-      margin: 0;
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
   <header>
-   <div class="logo">
-<img src="logo.png" alt="Broomleigh Tiger Logo">
-Broomleigh Learning
-</div>
+    <div class="logo">
+      <img src="logo.png" alt="Broomleigh Tiger Logo">
+      Broomleigh Learning
+    </div>
     <nav>
       <a href="#students">Students</a>
       <a href="#families">Families</a>
@@ -138,7 +187,7 @@ Broomleigh Learning
       </div>
     </div>
 
-    <div class="card" id="contact" style="margin-top:40px;">
+    <div class="card" id="contact" style="margin-top:50px;">
       <h2>Contact Us</h2>
       <p>Email: support@broomleigh.edu</p>
       <p>Phone: (949) 787-7678</p>
