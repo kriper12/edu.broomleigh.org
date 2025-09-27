@@ -175,7 +175,42 @@
     <div class="card"><img src="https://picsum.photos/400/200?17"><div class="info"><div class="title">Donkey Kong</div><div class="tag">Platformer</div></div></div>
     <div class="card"><img src="https://picsum.photos/400/200?18"><div class="info"><div class="title">Snake</div><div class="tag">Classic</div></div></div>
   </section>
+<script>
+    const selector = document.getElementById('siteSelector');
+    const favicon = document.getElementById('favicon');
 
+    function changeSite() {
+      const selected = selector.options[selector.selectedIndex];
+      const newTitle = selected.getAttribute('data-title');
+      const newFavicon = selected.getAttribute('data-favicon');
+
+      document.title = newTitle;
+      favicon.href = newFavicon;
+
+      localStorage.setItem('siteTitle', newTitle);
+      localStorage.setItem('siteFavicon', newFavicon);
+    }
+
+    selector.addEventListener('change', changeSite);
+
+    // Apply saved site on page load
+    window.addEventListener('load', () => {
+      const savedTitle = localStorage.getItem('siteTitle');
+      const savedFavicon = localStorage.getItem('siteFavicon');
+
+      if (savedTitle && savedFavicon) {
+        document.title = savedTitle;
+        favicon.href = savedFavicon;
+
+        for (let i = 0; i < selector.options.length; i++) {
+          if (selector.options[i].getAttribute('data-title') === savedTitle) {
+            selector.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
+  </script>
   <footer>
     © 2025 Konan. All Rights Reserved.
   </footer>
