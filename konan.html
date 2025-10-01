@@ -7,50 +7,6 @@
   <link id="favicon" rel="icon" href="../logo.png">
 <script src="konan/siteSettings.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-  /* Hide Default Cursor */
-  body {
-    cursor: none;
-  }
-
-  /* Custom Glow Cursor */
-  .cursor {
-    width: 18px;
-    height: 18px;
-    border: 2px solid #00f5ff;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out;
-    z-index: 9999;
-    box-shadow: 0 0 12px #00f5ff, 0 0 24px #6c5ce7;
-  }
-
-  /* Cursor Trail */
-  .cursor::after {
-    content: '';
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(0,245,255,0.3) 0%, transparent 70%);
-    pointer-events: none;
-  }
-</style>
-
-<div class="cursor"></div>
-
-<script>
-  const cursor = document.querySelector('.cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
-  });
-</script>
   <style>
     :root {
       --bg: #05070d;
